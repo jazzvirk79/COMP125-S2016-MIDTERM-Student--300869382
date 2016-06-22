@@ -2,7 +2,7 @@
 (function () {
 "use strict";
 console.log("app started.");
-
+//paragraphs intialized
 var IntroParagraph = document.getElementById("IntroParagraph");
 var Folegandros = document.getElementById("Folegandros");
 var Alonissos = document.getElementById("Alonissos");
@@ -14,7 +14,7 @@ var Hydra= document.getElementById("Hydra");
 var Ithaca = document.getElementById("Ithaca");
 var Gavdos= document.getElementById("Gavdos");
 var para = [];
-para[0]="Now is the time to travel to Greece. The country may be going through an economic crisis, but many travellers say that it hasn't impacted the experience of visiting. Plus, there may be some great deals. ";
+para[0]="Now is the time to travel to Greece. The country may be going through an economic crisis, but many travellers say that it hasn't impacted the experience of visiting. Plus, there may be some great deals.Greece has 1,400 islands, though only 230 of them are inhabited. And while everyone knows about Santorini and Mykonos, there are gorgeous lesser-known islands in Greece, too.";
 para[1]="Folegandros is almost a Greek cliché, full of beautiful whitewashed houses with bright blue doors lining cobblestoned streets on steep cliffs. Rugged and remote, without chain hotels or package tours — not even a bank or ATM — and accessible only by ferry, the volcanic island boasts solitude in spades, secluded beaches, and incredible sunsets. ";
 para[2]="Off the mainland, this island, whose surrounding waters are a designated marine park full of seals and dolphins, is a nature lover's dream. The spectacular spot's crystal clear waters and beautiful beaches are perfect for diving, and its lush flora and dense forests ideal for hikes. Since the rich landscape is chock full of indigenous herbs, it's also known for its traditional medicine, and home of the International Academy of Homeopathy.";
 para[3]="This bohemian paradise is more Côte d'Azur than Grecian island. Spetses was hot in the '60s, when it hosted Marilyn Monroe and Elizabeth Taylor, and remains a swanky summer retreat for Athens' glitterati to this day, full of fancy hotels, mansions and yachts, and stylish boutiques. Aside from a handful of locally-owned cabs, the four-mile-long island has banned cars in town, giving it a refreshingly 19th-century vibe, with horse-drawn carriages being a common sight.";
@@ -75,5 +75,57 @@ Gavdos.textContent = para[9];
 }
 
 })();
+
+    // create a reference to the sendButton
+    var sendButton = document.getElementById("sendButton");
+    
+    // check to see if sendButton exists
+    if(sendButton) {
+        // event listener
+        sendButton.addEventListener("click", sendButtonClick);
+    }
+    
+    
+    // event handler function
+    function sendButtonClick(event) {
+        console.log("clicked!");
+    }
+    
+    // create a reference to the form fields
+     var firstName = document.getElementById("firstName");
+     var lastName = document.getElementById("lastName");
+     var email = document.getElementById("email");
+     var contactNumber = document.getElementById("contactNumber");
+     var message = document.getElementById("message");
+    // create a reference to the form
+    var contactForm = document.getElementById("contactForm");
+    
+    
+    if(contactForm) {
+        // event listener with inline anonymous event handler function
+        contactForm.addEventListener("submit", function(event){
+            event.preventDefault();
+            console.log("submitted");
+            showFormInput();
+            contactForm.reset();
+        });
+    }
+    
+    /*This function shows the input from each form field 
+     * on the console
+     */
+    function showFormInput() {
+       
+        console.log("First Name: " + firstName.value);
+        
+        console.log("Last Name: " + lastName.value);
+       
+        console.log("Email: " + email.value);
+        
+        console.log("Contact Number: " + contactNumber.value);
+        
+        console.log("Message: " + message.value);
+      
+    }
 
 
